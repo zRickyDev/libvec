@@ -6,12 +6,13 @@
 /*   By: rporcu <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 19:36:45 by rporcu            #+#    #+#             */
-/*   Updated: 2019/03/16 00:17:50 by rporcu           ###   ########.fr       */
+/*   Updated: 2019/03/16 00:24:42 by rporcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBVEC_H
 # define LIBVEC_H
+# include <stdlib.h>
 # include <math.h>
 
 typedef struct	s_vec3

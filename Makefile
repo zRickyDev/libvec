@@ -6,7 +6,7 @@
 #    By: rporcu <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/15 19:31:17 by rporcu            #+#    #+#              #
-#    Updated: 2019/03/16 00:18:41 by rporcu           ###   ########.fr        #
+#    Updated: 2019/03/16 00:24:16 by rporcu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,10 +36,8 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 clean:
 	@rm -rf $(OBJDIR)
-	@make clean -C ./libft
 
 fclean: clean
 	@rm -rf $(NAME)
-	@make fclean -C ./libft
 
 re: fclean all
