@@ -6,7 +6,7 @@
 /*   By: rporcu <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 00:07:56 by rporcu            #+#    #+#             */
-/*   Updated: 2019/03/16 00:17:47 by rporcu           ###   ########.fr       */
+/*   Updated: 2019/03/16 13:32:11 by rporcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,10 @@ float		vec_normalize(t_vec3 *v)
 		v->z /= magnitude;
 	}
 	return (magnitude);
+}
+
+void		vec_free(t_vec3 *v)
+{
+	if (v)
+		free(v);
 }

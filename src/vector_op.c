@@ -6,48 +6,58 @@
 /*   By: rporcu <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 20:24:15 by rporcu            #+#    #+#             */
-/*   Updated: 2019/03/16 00:25:13 by rporcu           ###   ########.fr       */
+/*   Updated: 2019/03/16 13:34:01 by rporcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libvec.h"
 
-t_vec3		*add_vec(t_vec3 *v1, t_vec3 v2)
+t_vec3		*vec_add(t_vec3 v1, t_vec3 v2)
 {
-	v1->x += v2.x;
-	v1->y += v2.y;
-	v1->z += v2.z;
-	return (v1);
+	t_vec3	*v;
+
+	v = new_vec(v1.x + v2.x,
+		v1.y + v2.y,
+		v1.z + v2.z);
+	return (v);
 }
 
-t_vec3		*sub_vec(t_vec3 *v1, t_vec3 v2)
+t_vec3		*vec_sub(t_vec3 v1, t_vec3 v2)
 {
-	v1->x -= v2.x;
-	v1->y -= v2.y;
-	v1->z -= v2.z;
-	return (v1);
+	t_vec3	*v;
+
+	v = new_vec(v1.x - v2.x,
+		v1.y - v2.y,
+		v1.z - v2.z);
+	return (v);
 }
 
-t_vec3		*mul_vec(t_vec3 *v1, t_vec3 v2)
+t_vec3		*vec_mul(t_vec3 v1, t_vec3 v2)
 {
-	v1->x *= v2.x;
-	v1->y *= v2.y;
-	v1->z *= v2.z;
-	return (v1);
+	t_vec3	*v;
+
+	v = new_vec(v1.x * v2.x,
+		v1.y * v2.y,
+		v1.z * v2.z);
+	return (v);
 }
 
-t_vec3		*div_vec(t_vec3 *v1, t_vec3 v2)
+t_vec3		*vec_scale(t_vec3 v1, float f)
 {
-	v1->x /= v2.x;
-	v1->y /= v2.y;
-	v1->z /= v2.z;
-	return (v1);
+	t_vec3	*v;
+	
+	v = new_vec(v1.x * f,
+		v1.y * f,
+		v1.z * f);
+	return (v);
 }
 
-t_vec3		*addictive_inverse_vec(t_vec3 *v)
+t_vec3		*vec_divide(t_vec3 v1, float f)
 {
-	v->x *= -1;
-	v->y *= -1;
-	v->z *= -1;
+	t_vec3	*v;
+
+	v = new_vec(v1.x / f,
+		v1.y / f,
+		v1.z / f);
 	return (v);
 }
