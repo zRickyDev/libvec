@@ -6,7 +6,7 @@
 #    By: rporcu <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/15 19:31:17 by rporcu            #+#    #+#              #
-#    Updated: 2019/03/16 00:24:16 by rporcu           ###   ########.fr        #
+#    Updated: 2019/03/25 10:22:33 by rporcu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ dir:
 	@mkdir -p $(OBJDIR)
 
 $(NAME): $(OBJ)
-	gcc $(CCFLAGS) $(LFLAGS) $(OBJ) -o $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	gcc $(CCFLAGS) $(IDIR) -o $@ -c $<

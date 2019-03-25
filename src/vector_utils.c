@@ -6,24 +6,31 @@
 /*   By: rporcu <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 00:07:56 by rporcu            #+#    #+#             */
-/*   Updated: 2019/03/16 13:32:11 by rporcu           ###   ########.fr       */
+/*   Updated: 2019/03/25 10:20:17 by rporcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libvec.h"
 
-float		vec_length(t_vec3 v)
+float		v3_len(t_vec3 v)
 {
 	return (sqrt(v.x * v.x
 		+ v.y * v.y
 		+ v.z * v.z));
 }
 
-float		vec_normalize(t_vec3 *v)
+float		v3_len2(t_vec3 v)
+{
+	return (v.x * v.x
+			+ v.y * v.y
+			+ v.z * v.z);
+}
+
+float		v3_normalize(t_vec3 *v)
 {
 	float	magnitude;
 
-	magnitude = vec_length(*v);
+	magnitude = v3_len(*v);
 	if (magnitude > 0)
 	{
 		v->x /= magnitude;
@@ -31,10 +38,4 @@ float		vec_normalize(t_vec3 *v)
 		v->z /= magnitude;
 	}
 	return (magnitude);
-}
-
-void		vec_free(t_vec3 *v)
-{
-	if (v)
-		free(v);
 }
